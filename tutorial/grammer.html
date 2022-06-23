@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>強調の練習</h2>
+  <p>家に帰ったらすぐに<strong>手を洗いましょう</strong>。</p>
+  注意点：デザイン目的で文字を小さくしない。（あくまで意味付けを行うタグ）
+  <hr>
+
+  <h2>著作権表記</h2>
+  <p><small>&copy; 2022 Ken Takahashi.</small></p>
+  <p>&copy; 2022 Ken Takahashi.</p>
+  注意点：デザイン目的で文字を小さくしない。（あくまで意味付けを行うタグ）
+  <hr>
+
+  <h2>span要素</h2>
+  <ul>
+    <li>意味を持たない要素である</li>
+    <li>実務上は、文章の特定の部分をCSSで装飾した板置きによく利用する</li>
+    <li>他に適切な意味的要素がないときにのみ使用する</li>
+  </ul>
+  <p>私は<span class="red">HTML</span>と<span class="red">CSS</span>を学びます。</p>
+  <hr>
+  これは<div>div</div>です。
+  <hr>
+  これは<span>span</span>です。
+
+  <hr>
+  <article>
+    <h2>テーブル</h2>
+    <table border="1">
+      <caption>キャプション</caption>
+      <thead>
+        <tr>
+          <th>ヘッダー1</th>
+          <th>ヘッダー2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ボディ1</td>
+          <td>ボディ2</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>フッター2</td>
+          <td>フッター2</td>
+        </tr>
+      </tfoot>
+    </table>
+    <ul>
+      <li>thead, tbody, tfootとは、tableの各要素について意味的情報を提供する要素</li>
+      <li>thead: テーブルのヘッダー行を定義</li>
+      <li>tbody: テーブルのボディを定義</li>
+      <li>tfoot: テーブルのフッター行を定義</li>
+      <li>文書構造をより正確に表現できる</li>
+      <li>CSSを当てやすい</li>
+    </ul>
+
+    <table border="1">
+      <caption>行方向に結合</caption>
+      <tr>
+        <th colspan="3">セルを結合</th>
+      </tr>
+      <tr>
+        <td>コンテンツ1</td>
+        <td>コンテンツ2</td>
+        <td>コンテンツ3</td>
+      </tr>
+    </table>
+    <br>
+    
+    <table border="1">
+      <caption>列方向に結合</caption>
+      <tr>
+        <td rowspan="3">セルを結合</td>
+        <td>コンテンツ1</td>
+      </tr>
+      <tr>
+        <td>コンテンツ2</td>
+      </tr>
+      <tr>
+        <td>コンテンツ3</td>
+      </tr>
+    </table>
+  </article>
+
+  <hr>
+
+  <article>
+    <h2>フォーム</h2>
+
+    <form action="#" method="post"></form>
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="login">
+
+    <form action="#" method="post">
+      <dl>
+        <dt><label for="username">お名前</label></dt>
+        <dd><input id="username" type="text" name="username"></dd>
+
+        <dt><label for="email">メールアドレス</label></dt>
+        <dd><input id="email" type="text" name="email"></dd>
+
+        <dt><label for="area">お住まいの地域</label></dt>
+        <dd>
+          <select id="area" name="area">
+            <option value="" selected>選択してください</option>
+            <option value="hokkaido">北海道</option>
+            <option value="tohou">東北</option>
+            <option value="kanto">関東</option>
+            <option value="chubu">中部</option>
+            <option value="kinki">近畿</option>
+            <option value="shikoku">四国</option>
+            <option value="kyusyu">九州</option>
+            <option value="okinawa">沖縄</option>
+          </select>
+        </dd>
+
+        <dt>性別</dt>
+        <dd>
+          <label><input type="radio" name="gender" value="male" checked>男性</label>
+          <label><input type="radio" name="gender" value="female">女性</label>
+        </dd>
+
+        <dt><label for="contents">お問合せ内容</label></dt>
+        <dd><textarea id="contents" name="contents"></textarea></dd>
+
+        <dt><label for="privacy">プライバシーポリシーに同意する</label></dt>
+        <dd><input id="privacy" type="checkbox" name="privacy" value="1"></dd>
+      </dl>
+      <input type="submit" name="submit" value="送信">
+    </form>
+
+    <br>
+
+    <form action="#" method="post">
+      <input type="text" required maxlength="5">
+      <input type="submit" value="送信">
+    </form>
+  </article>
+</body>
+</html>
